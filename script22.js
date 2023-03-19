@@ -28,3 +28,17 @@ const uniqueInOrder = function (iterable) {
   }
   return output;
 };
+
+const uniqueInOrder2 = function (iterable) {
+  const output = [];
+  if (Array.isArray(iterable)) {
+    iterable.map((el, i, arr) => {
+      if (arr[i] !== arr[i - 1]) output.push(el);
+    });
+  } else {
+    iterable.split("").map((el, i, arr) => {
+      if (arr[i] !== arr[i - 1]) output.push(el);
+    });
+  }
+  return output;
+};
